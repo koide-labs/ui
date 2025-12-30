@@ -1,0 +1,156 @@
+@import "modern-normalize/modern-normalize.css";
+
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+/*
+  1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+  2. Remove default margins and padding
+  3. Reset all borders.
+*/
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  box-sizing: border-box; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 2 */
+  border: 0 solid; /* 3 */
+}
+
+:root {
+  --black: #0e1525;
+  --white: #fcfcfc;
+
+  --border-radius-1: 1px;
+  --border-radius-2: 2px;
+  --border-radius-4: 4px;
+  --border-radius-6: 6px;
+  --border-radius-8: 8px;
+  --border-radius-12: 12px;
+  --border-radius-16: 16px;
+  --border-radius-default: var(--border-radius-8);
+  --border-radius-round: 1028px;
+
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --space-256: 256px;
+  --space-default: var(--space-8);
+
+  --shadow-1: 0px 4px 8px 0px rgba(2, 2, 3, 0.16);
+  --shadow-2: 0px 8px 16px 0px rgba(2, 2, 3, 0.32);
+  --shadow-3: 0px 16px 32px 0px rgba(2, 2, 3, 0.48);
+  --shadow-default: var(--shadow-1);
+
+  --font-family-default: "IBM Plex Sans", sans-serif;
+  --font-family-code: "IBM Plex Mono", monospace;
+
+  --font-size-small: 12px;
+  --font-size-default: 14px;
+  --font-size-subhead-default: 16px;
+  --font-size-subhead-big: 20px;
+  --font-size-header-default: 24px;
+  --font-size-header-big: 32px;
+
+  --line-height-small: 1.5;
+  --line-height-default: 1.6;
+  --line-height-subhead-default: 1.375;
+  --line-height-subhead-big: 1.4;
+  --line-height-header-default: 1.333;
+  --line-height-header-big: 1.25;
+  --line-height-input: 22px;
+  --line-height-single: 1;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  --transition-duration-snappy: 120ms;
+  --transition-timing-function-snappy: ease-out;
+
+  --transition-duration-chill: 300ms;
+  --transition-timing-function-chill: ease-in-out;
+
+  --border-width-default: 1px;
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-default);
+  line-height: var(--line-height-default);
+  overflow-x: hidden;
+
+  /* https://base-ui.com/react/overview/quick-start */
+  position: relative;
+}
+
+.root {
+  isolation: isolate;
+}
+
+[data-theme] {
+  --shadow-focus: inset 0 0 0 1.5px var(--primary-default);
+
+  /* Colorway aliases */
+  --primary-dimmest: var(--blue-dimmest);
+  --primary-dimmer: var(--blue-dimmer);
+  --primary-default: var(--blue-default);
+  --primary-stronger: var(--blue-stronger);
+  --primary-strongest: var(--blue-strongest);
+  --positive-dimmest: var(--green-dimmest);
+  --positive-dimmer: var(--green-dimmer);
+  --positive-default: var(--green-default);
+  --positive-stronger: var(--green-stronger);
+  --positive-strongest: var(--green-strongest);
+  --negative-dimmest: var(--red-dimmest);
+  --negative-dimmer: var(--red-dimmer);
+  --negative-default: var(--red-default);
+  --negative-stronger: var(--red-stronger);
+  --negative-strongest: var(--red-strongest);
+  --warning-dimmest: var(--yellow-dimmest);
+  --warning-dimmer: var(--yellow-dimmer);
+  --warning-default: var(--yellow-default);
+  --warning-stronger: var(--yellow-stronger);
+  --warning-strongest: var(--yellow-strongest);
+
+  /* Default interactive styles  */
+  --surface-background: var(--background-root);
+  --interactive-background: var(--background-default);
+  --interactive-background--active: var(--background-higher);
+  --interactive-border: var(--outline-dimmest);
+  --interactive-border--hover: var(--outline-default);
+
+  /* Interactive "colorway" (probably shouldn't do this) */
+  --interactive-dimmest: var(--surface-background);
+  --interactive-dimmer: var(--interactive-background);
+  --interactive-default: var(--interactive-background--active);
+  --interactive-stronger: var(--interactive-border--hover);
+  --interactive-strongest: var(--foreground-dimmer);
+
+  /* Default colorway styles */
+  --colorway-dimmest: var(--primary-dimmest);
+  --colorway-dimmer: var(--primary-dimmer);
+  --colorway-default: var(--primary-default);
+  --colorway-stronger: var(--primary-stronger);
+  --colorway-strongest: var(--primary-strongest);
+
+  background-color: var(--background-root);
+  color: var(--foreground-default);
+}
