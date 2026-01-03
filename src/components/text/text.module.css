@@ -40,11 +40,13 @@
 
 /* Text size variants */
 .text_size_default {
+  font-weight: var(--font-weight-regular);
   font-size: var(--font-size-default);
   line-height: var(--line-height-default);
 }
 
 .text_size_small {
+  font-weight: var(--font-weight-regular);
   font-size: var(--font-size-small);
   line-height: var(--line-height-small);
 }

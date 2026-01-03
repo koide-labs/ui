@@ -86,7 +86,7 @@ export function Icon({
       fill={color || "currentColor"}
       width={iconSize}
       height={iconSize}
-      className={cn(styles.icon, styles[`icon_space${iconSize}`], className)}
+      className={cn(styles.icon, styles[`icon_space_${iconSize}`], className)}
       {...props}
     >
       {/* https://css-tricks.com/accessible-svg-icons/ */}
