@@ -6,7 +6,7 @@ export default {
    * I kind of want to ignore globals since we break a shit ton of rules
    * https://stylelint.io/user-guide/configure#ignorefiles
    */
-  ignoreFiles: ["src/styles/**/*.css"],
+  ignoreFiles: ["src/styles/**/*.css", "src/integrations/tailwind.css"],
   rules: {
     /**
      * We want to use BEM instead
