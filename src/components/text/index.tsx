@@ -1,6 +1,7 @@
 import { mergeProps, useRender } from "@base-ui/react";
-import type { SizeVariant } from "~/styles/tokens";
 import clsx from "clsx";
+
+import type { SizeVariant } from "~/styles/tokens";
 
 import viewStyles from "../view/view.module.css";
 import styles from "./text.module.css";

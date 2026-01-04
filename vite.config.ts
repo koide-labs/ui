@@ -1,5 +1,6 @@
 /// <reference types="vitest/config" />
 // https://vite.dev/config/
+
 import { fileURLToPath } from "node:url";
 import path from "path";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";

@@ -1,13 +1,15 @@
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog";
-import type { SizeVariant } from "~/styles/tokens";
 import clsx from "clsx";
 import type { ComponentProps, ReactElement, ReactNode } from "react";
 
-import transitionStyles from "../../styles/transitions.module.css";
+import type { SizeVariant } from "~/styles/tokens";
+
 import { Button, type ButtonProps } from "../button";
 import { Surface, type Background } from "../surface";
 import { Text } from "../text";
 import { View } from "../view";
+
+import transitionStyles from "../../styles/transitions.module.css";
 import styles from "./alert-dialog.module.css";
 
 /**

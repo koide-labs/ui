@@ -1,8 +1,10 @@
 import { mergeProps, useRender } from "@base-ui/react";
-import type { SizeVariant } from "~/styles/tokens";
 import { createContext, useContext } from "react";
 
+import type { SizeVariant } from "~/styles/tokens";
+
 import { Text } from "../text";
+
 import styles from "./heading.module.css";
 
 type Level = 1 | 2 | 3 | 4 | 5 | 6;

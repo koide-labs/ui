@@ -1,11 +1,13 @@
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
-import { textify } from "~/-utils";
 import clsx from "clsx";
 import type { ComponentProps, ReactNode } from "react";
+
+import { textify } from "~/-utils";
 
 import { Icon } from "../icon";
 import { Surface } from "../surface";
 import { View } from "../view";
+
 import styles from "./accordion.module.css";
 
 export const Accordion = AccordionPrimitive.Root;

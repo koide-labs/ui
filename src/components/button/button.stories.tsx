@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { tokens, type SizeVariant } from "~/styles/tokens";
 
 import { Button } from ".";

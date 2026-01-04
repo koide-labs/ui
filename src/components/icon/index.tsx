@@ -1,9 +1,11 @@
-import { type ColorToken, type SizeVariant } from "~/styles/tokens";
 import clsx from "clsx";
 import { createContext, useContext, type ComponentProps } from "react";
 import svgSprite from "remixicon/fonts/remixicon.symbol.svg";
 
+import { type ColorToken, type SizeVariant } from "~/styles/tokens";
+
 import { type IconName } from "./icon-names";
+
 import styles from "./icon.module.css";
 
 export interface IconProps extends Omit<ComponentProps<"svg">, "name"> {
