@@ -19,6 +19,16 @@
   padding: 0; /* 2 */
 }
 
+/*
+  Disable all animations and transitions to avoid motion triggers
+*/
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 :root {
   --black: #0e1525;
   --white: #fcfcfc;

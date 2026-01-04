@@ -1,4 +1,4 @@
-import { Button as ButtonPrimitive } from "@base-ui/react";
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { textify } from "~/-utils";
 import type { SizeVariant } from "~/styles/tokens";
 import clsx from "clsx";

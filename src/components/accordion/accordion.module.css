@@ -10,10 +10,6 @@
   transform: rotate(-45deg);
   transition: transform var(--transition-duration-snappy)
     var(--transition-timing-function-snappy);
-
-  @media (prefers-reduced-motion) {
-    transition: none;
-  }
 }
 
 .accordion__trigger {
@@ -40,10 +36,6 @@
   &[data-starting-style],
   &[data-ending-style] {
     height: 0;
-  }
-
-  @media (prefers-reduced-motion) {
-    transition: none;
   }
 }
 
