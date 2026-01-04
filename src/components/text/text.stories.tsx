@@ -39,7 +39,7 @@ export const Default: Story = {
     color: "default",
   },
   render: (props) => (
-    <Surface style={{ width: "512px", padding: tokens.space8 }} elevated>
+    <Surface style={{ width: "512px", padding: tokens.space16 }} elevated>
       <Text {...props}>The quick brown fox jumps over the lazy dog.</Text>
     </Surface>
   ),

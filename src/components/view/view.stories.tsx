@@ -38,9 +38,9 @@ export const Default: Story = {
         <Surface
           style={{
             border: `1px solid ${tokens.outlineDimmest}`,
-            padding: tokens.space8,
+            padding: tokens.space16,
             width: tokens.space256,
-            gap: tokens.space4,
+            gap: tokens.space6,
           }}
           key={background}
           background={background}
