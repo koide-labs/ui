@@ -11,8 +11,6 @@
   border-color: transparent;
   border-radius: var(--border-radius-default);
   background-color: transparent;
-
-  /* default disabled behavior */
   color: var(--foreground-dimmest);
 
   &:not([disabled], [data-disabled]) {
@@ -34,7 +32,6 @@
   background-color: var(--surface-interactive-background);
 
   &:not([disabled], [data-disabled]) {
-    cursor: pointer;
     color: inherit;
 
     &:active {
@@ -54,7 +51,6 @@
   transition-property: background-color, box-shadow;
 
   &:not([disabled], [data-disabled]) {
-    cursor: pointer;
     color: inherit;
 
     &:not(textarea):active {
@@ -75,7 +71,6 @@
   border-color: var(--surface-interactive-border);
 
   &:not([disabled], [data-disabled]) {
-    cursor: pointer;
     color: inherit;
 
     &:not(textarea):active {
@@ -96,7 +91,6 @@
   background-color: var(--surface-interactive-background);
 
   &:not([disabled], [data-disabled]) {
-    cursor: pointer;
     border-color: var(--surface-interactive-border);
     color: inherit;
 
@@ -118,7 +112,6 @@
   border-radius: 0;
 
   &:not([disabled], [data-disabled]) {
-    cursor: pointer;
     color: inherit;
 
     &:not(textarea):active {

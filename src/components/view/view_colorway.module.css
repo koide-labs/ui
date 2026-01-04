@@ -5,9 +5,14 @@
 
   transition-duration: var(--transition-duration-snappy);
   transition-timing-function: var(--transition-timing-function-snappy);
+  cursor: not-allowed;
   border-width: 1px;
   border-style: solid;
   border-color: transparent;
+
+  &:not([disabled], [data-disabled]) {
+    cursor: pointer;
+  }
 }
 
 /* Variants */

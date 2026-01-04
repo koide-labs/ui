@@ -21,6 +21,7 @@
 
 /*
   Disable all animations and transitions to avoid motion triggers
+  TODO maybe revisit to add custom animations (just fade)
 */
 @media (prefers-reduced-motion: reduce) {
   * {
