@@ -1,5 +1,5 @@
 .accordion {
-  border-bottom: 1px solid var(--surface-interactive-border-hover);
+  border-bottom: 1px solid var(--surface-interactive-border);
 }
 
 .accordion__header {

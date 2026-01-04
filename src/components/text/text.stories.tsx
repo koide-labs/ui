@@ -8,7 +8,7 @@ import { View } from "../view";
 const sizeVariants: SizeVariant[] = ["sm", "md", "lg", "xl", "2xl", "3xl"];
 
 const meta = {
-  title: "Text",
+  title: "Typography/Text",
   component: Text,
   parameters: { layout: "centered" },
   argTypes: {
