@@ -45,7 +45,7 @@ export type LoadingVariant = "background" | "foreground";
 export interface ViewProps extends useRender.ComponentProps<"div"> {
   /**
    * Specify an interactive variant to make element look clicky.
-   * Setting `interactive` to true will use "fill-outline".
+   * Setting `interactive` to true will use "fill".
    * No interactive variant will be used if one is not specified.
    *
    * @warning You cannot supply both interactive and colorway values.
@@ -54,7 +54,7 @@ export interface ViewProps extends useRender.ComponentProps<"div"> {
 
   /**
    * Specify a color variant to make element look colorful!
-   * Setting `color` to true will use "primary_fill-outline".
+   * Setting `color` to true will use "primary_fill".
    * No color will be used if one is not specified.
    *
    * @warning You cannot supply both interactive and colorway values.
@@ -69,8 +69,15 @@ export interface ViewProps extends useRender.ComponentProps<"div"> {
   loading?: boolean | LoadingVariant;
 }
 
-export const View = ({ render, ...props }: ViewProps) => {
-  const normalized = normalize(props);
+export const View = ({
+  interactive,
+  colorway,
+  loading,
+  render,
+  ...props
+}: ViewProps) => {
+  // yes, we destructure and restructure bc we don't want our custom properties added to the DOM
+  const normalized = normalize({ interactive, colorway, loading });
 
   if (normalized.interactive && normalized.colorway) {
     throw new Error("You cannot supply both interactive and colorway values.");
@@ -109,16 +116,14 @@ const normalize = (
   let interactive: InteractiveVariant | null = null;
   if (props.interactive) {
     interactive =
-      typeof props.interactive === "boolean"
-        ? "fill-outline"
-        : props.interactive;
+      typeof props.interactive === "boolean" ? "fill" : props.interactive;
   }
 
   let colorway: [Color, ColorVariant] | null = null;
   if (props.colorway) {
     colorway =
       typeof props.colorway === "boolean"
-        ? ["primary", "fill-outline"]
+        ? ["primary", "fill"]
         : (props.colorway.split("_") as [Color, ColorVariant]);
   }
 

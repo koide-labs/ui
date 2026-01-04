@@ -1,3 +1,11 @@
+/**
+ * Size variants for widths, buttons, icon sizes, you name it!
+ * Use `Extract` if you don't want to support all of them but ensure we reuse
+ * correct values.
+ * @example
+ * // only support a subset of size variants
+ * Extract<SizeVariant, "sm" | "md" | "lg">
+ */
 export type SizeVariant = "sm" | "md" | "lg" | "xl" | "2xl" | "3xl";
 
 type ValueOf<T> = T[keyof T];

@@ -1,4 +1,8 @@
 [data-theme="light"] {
+  --shadow-1: 0px 4px 8px 0px rgba(2, 2, 3, 0.1);
+  --shadow-2: 0px 8px 16px 0px rgba(2, 2, 3, 0.15);
+  --shadow-3: 0px 16px 32px 0px rgba(2, 2, 3, 0.2);
+
   --background-root: #ebeced;
   --background-default: #fcfcfc;
   --background-higher: #f0f1f2;

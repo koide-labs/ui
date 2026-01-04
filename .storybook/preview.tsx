@@ -20,7 +20,7 @@ const preview: Preview = {
 
   decorators: [
     (Story) => {
-      document.body.dataset.theme = "light";
+      document.body.dataset.theme = "dark";
 
       return (
         <div className="root">

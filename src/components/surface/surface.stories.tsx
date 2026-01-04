@@ -30,7 +30,7 @@ const PaddedSurface = ({
 );
 
 export const Default: Story = {
-  name: "Stacking Surfaces",
+  name: "Stacking",
   render: () => (
     <PaddedSurface label="root">
       <PaddedSurface label="default" elevated>

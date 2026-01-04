@@ -2,9 +2,9 @@ import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { textify } from "~/-utils";
 import type { SizeVariant } from "~/styles/tokens";
 import clsx from "clsx";
-import type { ReactNode } from "react";
 
-import { IconSizeProvider } from "../icon";
+import { Icon, IconSizeProvider } from "../icon";
+import type { IconName } from "../icon/icon-names";
 import { View, type ViewProps } from "../view";
 import styles from "./button.module.css";
 
@@ -17,12 +17,12 @@ export type ButtonProps = ViewProps & {
   /**
    * Icon to display on the left side of the button content
    */
-  iconLeft?: ReactNode;
+  leftIcon?: IconName;
 
   /**
    * Icon to display on the right side of the button content
    */
-  iconRight?: ReactNode;
+  rightIcon?: IconName;
 
   /**
    * The button can remain keyboard accessible while being rendered as another tag
@@ -33,8 +33,8 @@ export type ButtonProps = ViewProps & {
 
 export function Button({
   size = "md",
-  iconLeft,
-  iconRight,
+  leftIcon,
+  rightIcon,
   children,
   render,
   ...props
@@ -51,9 +51,9 @@ export function Button({
           />
         }
       >
-        {iconLeft}
-        {textify(children, { size })}
-        {iconRight}
+        {leftIcon ? <Icon name={leftIcon} /> : null}
+        {textify(children, { size, color: "inherit" })}
+        {rightIcon ? <Icon name={rightIcon} /> : null}
       </View>
     </IconSizeProvider>
   );

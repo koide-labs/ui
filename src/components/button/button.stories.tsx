@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { tokens, type SizeVariant } from "~/styles/tokens";
 
 import { Button } from ".";
-import { Icon } from "../icon";
 import { Text } from "../text";
 import { View } from "../view";
 
@@ -12,19 +11,15 @@ const meta = {
   title: "Button",
   component: Button,
   parameters: { layout: "centered" },
-  tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (props) => (
-    <Button
-      {...props}
-      colorway="primary_fill"
-      iconLeft={<Icon name="square-line" />}
-    >
+    <Button {...props} colorway="primary_fill" leftIcon="square-line">
       Hello World
     </Button>
   ),
@@ -35,7 +30,7 @@ export const Link: Story = {
     <Button
       {...props}
       colorway="primary_fill"
-      iconLeft={<Icon name="external-link-line" />}
+      leftIcon="external-link-line"
       render={<a href="https://natmfat.com" target="_blank" rel="noreferrer" />}
       nativeButton={false}
     >
@@ -55,7 +50,7 @@ export const AllSizes: Story = {
             {...props}
             interactive="fill"
             size={variant}
-            iconLeft={<Icon name="square-line" />}
+            leftIcon="square-line"
           >
             Hello World
           </Button>

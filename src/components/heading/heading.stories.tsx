@@ -6,7 +6,6 @@ const meta = {
   title: "Heading",
   component: Heading,
   parameters: { layout: "centered" },
-  tags: ["autodocs"],
   argTypes: {
     level: {
       control: "select",

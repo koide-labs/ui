@@ -34,6 +34,8 @@
   --black: #0e1525;
   --white: #fcfcfc;
 
+  --shadow-default: var(--shadow-1);
+
   --border-radius-1: 1px;
   --border-radius-2: 2px;
   --border-radius-4: 4px;
@@ -63,11 +65,6 @@
   --space-128: 128px;
   --space-256: 256px;
   --space-default: var(--space-8);
-
-  --shadow-1: 0px 4px 8px 0px rgba(2, 2, 3, 0.16);
-  --shadow-2: 0px 8px 16px 0px rgba(2, 2, 3, 0.32);
-  --shadow-3: 0px 16px 32px 0px rgba(2, 2, 3, 0.48);
-  --shadow-default: var(--shadow-1);
 
   --font-family-default: "IBM Plex Sans", sans-serif;
   --font-family-code: "IBM Plex Mono", monospace;
