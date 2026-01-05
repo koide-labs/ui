@@ -1,4 +1,4 @@
-import { Avatar as AvatarPrimitive } from "@base-ui/react";
+import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar";
 import clsx from "clsx";
 
 import type { SizeVariant } from "~/styles/tokens";

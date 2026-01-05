@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { AllVariants } from "~/stories/all-variants";
+import { AllVariants } from "~/stories/components/all-variants";
 import { type SizeVariant } from "~/styles/tokens";
 
 import { IconButton } from ".";

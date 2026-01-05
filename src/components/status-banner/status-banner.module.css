@@ -39,10 +39,6 @@
   gap: var(--status-banner-content-gap);
 }
 
-.status-banner__title {
-  font-weight: var(--font-weight-medium);
-}
-
 .status-banner__message {
   flex-grow: 1;
   flex-shrink: 1;

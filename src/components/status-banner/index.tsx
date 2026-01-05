@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 import type { SizeVariant } from "~/styles/tokens";
 
+import { Heading } from "../heading";
 import { Icon } from "../icon";
 import type { IconName } from "../icon/icon-names";
 import { Text } from "../text";
@@ -10,7 +11,10 @@ import { View, type Color } from "../view";
 
 import styles from "./status-banner.module.css";
 
-export interface StatusBannerProps extends useRender.ComponentProps<"div"> {
+export interface StatusBannerProps extends Omit<
+  useRender.ComponentProps<"div">,
+  "children"
+> {
   /** Communicate purpose with color */
   color?: Color | "neutral";
 
@@ -25,8 +29,6 @@ export interface StatusBannerProps extends useRender.ComponentProps<"div"> {
 
   /** Size, defaults to lg */
   size?: Extract<SizeVariant, "md" | "lg">;
-
-  children?: never;
 }
 
 // map status banner size to size of indivdual elements
@@ -80,14 +82,9 @@ export function StatusBanner({
       {icon ? <Icon name={icon} size={sizeMap[size].icon} /> : null}
 
       <View className={styles["status-banner__content"]}>
-        <Text
-          render={<h1 />}
-          className={styles["status-banner__title"]}
-          size={sizeMap[size].title}
-          color="inherit"
-        >
+        <Heading level={1} size={sizeMap[size].title} color="inherit">
           {title}
-        </Text>
+        </Heading>
         <Text
           className={styles["status-banner__message"]}
           multiline

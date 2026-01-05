@@ -18,11 +18,6 @@ const meta = {
       control: "select",
       options: ["neutral", ...colors],
     },
-    children: {
-      table: {
-        disable: true,
-      },
-    },
   },
 } satisfies Meta<typeof StatusBanner>;
 

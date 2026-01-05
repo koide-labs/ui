@@ -22,13 +22,19 @@ const LevelContext = createContext<number>(0);
 
 export interface HeadingProps extends useRender.ComponentProps<"h1"> {
   /**
-   * Explicitly set heading level
-   * Defaults to level provided by section
+   * Explicitly set heading level, which determines size.
+   * Defaults to level provided by section.
    */
   level?: Level;
+
+  /**
+   * Override text size.
+   * For example, you may want an h2 but render it as "sm".
+   */
+  size?: SizeVariant;
 }
 
-export function Heading({ level, render, ...props }: HeadingProps) {
+export function Heading({ level, size, render, ...props }: HeadingProps) {
   const levelContext = useContext(LevelContext);
   const normalizedLevel = normalizeLevel(level || levelContext);
 
@@ -42,7 +48,9 @@ export function Heading({ level, render, ...props }: HeadingProps) {
       props,
     ),
   });
-  return <Text render={element} size={levelToClassName[normalizedLevel]} />;
+  return (
+    <Text render={element} size={size || levelToClassName[normalizedLevel]} />
+  );
 }
 
 // Sections inspired by Carbon Design
