@@ -5,7 +5,7 @@ import type { ComponentProps, ReactElement, ReactNode } from "react";
 import type { Size } from "~/styles/tokens";
 
 import { IconButton } from "../icon-button";
-import { Surface } from "../surface";
+import { Surface, type Background } from "../surface";
 import { Text } from "../text";
 import { View } from "../view";
 
@@ -41,6 +41,11 @@ export type BaseDialogProps = {
   width?: Extract<Size, "sm" | "md" | "lg">;
 
   /**
+   * Override popup background. Defaults to "root"
+   */
+  background?: Background;
+
+  /**
    * Vertically center dialog (or not). You probably shouldn't if you suspect
    * content will overflow.
    */
@@ -65,6 +70,7 @@ export function Dialog({
   description,
   trigger,
   width = "md",
+  background = "root",
   centered,
   closable,
   children,
@@ -89,7 +95,7 @@ export function Dialog({
           )}
         >
           <Surface
-            background="root"
+            background={background}
             className={clsx(
               styles["dialog__content"],
               styles[`dialog__content_width_${width}`],

@@ -19,14 +19,11 @@ export const Default: Story = {
   render: (args) => (
     <CommandDialog
       trigger={<Button children="Open Command Dialog" />}
+      placeholder="Search and run commands."
       {...args}
     >
       <CommandGroup heading="Suggestions">
-        <CommandItem
-          icon="calendar-line"
-          children="Calendar"
-          shortcut="Win+C"
-        />
+        <CommandItem icon="calendar-line" children="Calendar" shortcut="⌘+C" />
         <CommandItem icon="search-line" children="Search Emoji" />
         <CommandItem icon="calculator-line" children="Calculator" />
       </CommandGroup>

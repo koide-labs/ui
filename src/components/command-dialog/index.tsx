@@ -16,7 +16,7 @@ import styles from "./command-dialog.module.css";
 // TODO put background in dialog base props
 export type CommandDialogProps = Omit<
   BaseDialogProps,
-  "title" | "description"
+  "title" | "description" | "background"
 > & {
   placeholder?: string;
 };
@@ -27,7 +27,13 @@ export function CommandDialog({
   ...props
 }: CommandDialogProps) {
   return (
-    <Dialog width="sm" className={styles["command-dialog"]} {...props} closable>
+    <Dialog
+      width="sm"
+      background="default"
+      className={styles["command-dialog"]}
+      {...props}
+      closable
+    >
       <CommandPrimitive>
         <View className={styles["command-dialog__input-root"]}>
           <View
@@ -61,7 +67,7 @@ export function CommandGroup({
 }: ComponentProps<typeof CommandPrimitive.Group>) {
   return (
     <CommandPrimitive.Group
-      className={clsx(styles["commmand-dialog__group"], className)}
+      className={clsx(styles["command-dialog__group"], className)}
       {...props}
     />
   );
@@ -93,11 +99,11 @@ export function CommandItem({
       {textify(children)}
       {shortcut ? (
         <Text
-          className={clsx(styles["command-dialog__shortcut"], className)}
-          color="dimmest"
+          className={clsx(styles["command-dialog__shortcut"])}
+          color="dimmer"
           size="sm"
         >
-          {null}
+          {shortcut}
         </Text>
       ) : null}
     </View>

@@ -46,6 +46,7 @@ export function AlertDialog({
   actions,
   trigger,
   width = "md",
+  background = "root",
   centered = false,
   className,
   ...props
@@ -72,7 +73,7 @@ export function AlertDialog({
           )}
         >
           <Surface
-            background="root"
+            background={background}
             className={clsx(
               dialogStyles["dialog__content"],
               dialogStyles[`dialog__content_width_${width}`],
