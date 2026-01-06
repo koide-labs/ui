@@ -1,3 +1,4 @@
+import type { TextProps } from "~/components/text";
 import type {
   Color,
   ColorStyle,
@@ -6,6 +7,13 @@ import type {
 } from "~/components/view";
 
 import { type Size } from "../styles/tokens";
+
+export const textColors: Array<NonNullable<TextProps["color"]>> = [
+  "inherit",
+  "default",
+  "dimmer",
+  "dimmest",
+];
 
 export const surfaceBackgrounds = [
   "root",

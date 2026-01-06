@@ -50,8 +50,8 @@ export function Text({
     props: mergeProps(
       {
         className: clsx(
-          viewStyles.view,
-          styles.text,
+          viewStyles["view"],
+          styles["text"],
           styles[`text_color_${color}`],
           styles[`text_size_${size}`],
           !multiline && styles["text_clip-line"],

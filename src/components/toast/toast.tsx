@@ -31,6 +31,7 @@ export function ToastViewport() {
 }
 
 // TODO we're not using the toast primitives here...
+// TODO specify toast background in viewport?
 
 function ToastList() {
   const toastManager = useToastManager();
@@ -80,7 +81,7 @@ function ToastList() {
               render={
                 <IconButton
                   className={toast.title ? styles["toast__close"] : undefined}
-                  interactive={color ? `${color}_no-fill` : true}
+                  interactive={color ? `${color}_no-fill` : "no-fill"}
                   name="close-line"
                   size="sm"
                   alt="Close"

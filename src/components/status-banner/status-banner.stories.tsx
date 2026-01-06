@@ -6,7 +6,7 @@ import { StatusBanner } from ".";
 import { View } from "../view";
 
 const meta = {
-  title: "StatusBanner",
+  title: "Block/Status Banner",
   component: StatusBanner,
   parameters: { layout: "centered" },
   argTypes: {

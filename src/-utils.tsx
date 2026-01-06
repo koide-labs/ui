@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { Text, type TextProps } from "./components/text";
+import { Text, type TextProps } from "~/components/text";
 
 export function pick<T extends Record<string, string>, K extends keyof T>(
   record: T,

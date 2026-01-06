@@ -61,17 +61,17 @@ export function Popover({
           <PopoverPrimitive.Popup
             render={<Surface background={background} />}
             className={clsx(
-              tooltipStyles.tooltip,
-              styles.popover,
-              transitionStyles.transition_scale,
+              tooltipStyles["tooltip"],
+              styles["popover"],
+              transitionStyles["transition_scale"],
               className,
             )}
           >
-            <PopoverPrimitive.Arrow className={tooltipStyles.tooltip__arrow}>
+            <PopoverPrimitive.Arrow className={tooltipStyles["tooltip__arrow"]}>
               <TooltipArrow className={tooltipStyles["tooltip__arrow-icon"]} />
             </PopoverPrimitive.Arrow>
             {title || description ? (
-              <View className={styles.popover__header}>
+              <View className={styles["popover__header"]}>
                 {title ? (
                   <PopoverPrimitive.Title
                     render={<Heading level={2} size="2xl" />}

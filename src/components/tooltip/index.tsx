@@ -23,14 +23,14 @@ type TooltipPositionerProps = Pick<
 
 export type TooltipProps = TooltipRootProps &
   TooltipPositionerProps & {
-    message?: ReactNode;
+    children?: ReactNode;
 
     /** Specify trigger to open tooltip. */
     trigger?: ReactElement;
   };
 
 export function Tooltip({
-  message,
+  children,
   trigger,
   align,
   side,
@@ -43,12 +43,15 @@ export function Tooltip({
         <TooltipPrimitive.Positioner align={align} side={side} sideOffset={8}>
           <TooltipPrimitive.Popup
             render={<Surface background="highest" />}
-            className={clsx(styles.tooltip, transitionStyles.transition_scale)}
+            className={clsx(
+              styles["tooltip"],
+              transitionStyles["transition_scale"],
+            )}
           >
-            <TooltipPrimitive.Arrow className={styles.tooltip__arrow}>
+            <TooltipPrimitive.Arrow className={styles["tooltip__arrow"]}>
               <TooltipArrow className={styles["tooltip__arrow-icon"]} />
             </TooltipPrimitive.Arrow>
-            {textify(message)}
+            {textify(children)}
           </TooltipPrimitive.Popup>
         </TooltipPrimitive.Positioner>
       </TooltipPrimitive.Portal>

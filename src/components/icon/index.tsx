@@ -49,7 +49,7 @@ export function Icon({
       focusable={false}
       xmlns="http://www.w3.org/2000/svg"
       fill={color || "currentColor"}
-      className={clsx(styles.icon, styles[`icon_size_${size}`], className)}
+      className={clsx(styles["icon"], styles[`icon_size_${size}`], className)}
       {...props}
     >
       {/* https://css-tricks.com/accessible-svg-icons/ */}

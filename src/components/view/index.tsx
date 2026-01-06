@@ -82,7 +82,7 @@ export const View = ({
     props: mergeProps(
       {
         className: clsx(
-          styles.view,
+          styles["view"],
           color && colorwayStyles[`view_colorway_color-${color}`],
           normalized.interactive && [
             interactiveStyles["view_interactive"],

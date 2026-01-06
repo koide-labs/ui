@@ -33,8 +33,8 @@ export function AccordionItem({
   ...props
 }: AccordionItemProps) {
   return (
-    <AccordionPrimitive.Item className={styles.accordion} {...props}>
-      <AccordionPrimitive.Header className={styles.accordion__header}>
+    <AccordionPrimitive.Item className={styles["accordion"]} {...props}>
+      <AccordionPrimitive.Header className={styles["accordion__header"]}>
         <Surface
           elevated
           render={
@@ -42,7 +42,7 @@ export function AccordionItem({
               interactive="list-item"
               render={
                 <AccordionPrimitive.Trigger
-                  className={clsx(styles.accordion__trigger, className)}
+                  className={clsx(styles["accordion__trigger"], className)}
                 />
               }
             >
@@ -55,7 +55,7 @@ export function AccordionItem({
           }
         />
       </AccordionPrimitive.Header>
-      <AccordionPrimitive.Panel className={styles.accordion__panel}>
+      <AccordionPrimitive.Panel className={styles["accordion__panel"]}>
         <View className={styles["accordion__panel-content"]}>
           {textify(content, {
             multiline: true,

@@ -12,7 +12,7 @@ const meta = {
   component: Tooltip,
   parameters: { layout: "centered" },
   argTypes: {
-    message: {
+    children: {
       control: "text",
     },
     align: {
@@ -38,7 +38,7 @@ export const Default: Story = {
     },
   },
   args: {
-    message: "Bold",
+    children: "Bold",
     align: "center",
     open: true,
   },
@@ -58,15 +58,15 @@ export const Provider: Story = {
     <TooltipProvider>
       <View style={{ flexDirection: "row", gap: tokens.space4 }}>
         <Tooltip
-          message="Bold"
+          children="Bold"
           trigger={<IconButton name="bold" alt="Bold" interactive />}
         />
         <Tooltip
-          message="Italic"
+          children="Italic"
           trigger={<IconButton name="italic" alt="Italic" interactive />}
         />
         <Tooltip
-          message="Underline"
+          children="Underline"
           trigger={<IconButton name="underline" alt="Underline" interactive />}
         />
       </View>

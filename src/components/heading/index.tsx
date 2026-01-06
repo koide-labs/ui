@@ -54,7 +54,7 @@ export function Heading({
     render,
     props: mergeProps(
       {
-        className: styles.heading,
+        className: styles["heading"],
       },
       props,
     ),

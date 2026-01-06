@@ -47,7 +47,7 @@ export const Surface = ({
     <ElevationContext.Provider value={elevation}>
       <View
         className={clsx(
-          styles.surface,
+          styles["surface"],
           styles[`surface--${elevationToBackground(elevation)}`],
           className,
         )}

@@ -32,17 +32,17 @@ export function Avatar(props: AvatarProps) {
   return (
     <AvatarPrimitive.Root
       className={clsx(
-        styles.avatar,
+        styles["avatar"],
         styles[`avatar_size_${props.size || "md"}`],
       )}
     >
       {props.src ? (
         <AvatarPrimitive.Image
           src={props.src}
-          className={styles.avatar__image}
+          className={styles["avatar__image"]}
         />
       ) : null}
-      <AvatarPrimitive.Fallback className={styles.avatar__fallback}>
+      <AvatarPrimitive.Fallback className={styles["avatar__fallback"]}>
         {fallback}
       </AvatarPrimitive.Fallback>
     </AvatarPrimitive.Root>

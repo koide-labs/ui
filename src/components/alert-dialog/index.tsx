@@ -1,15 +1,15 @@
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui/react/alert-dialog";
 import clsx from "clsx";
-import type { ComponentProps, ReactElement, ReactNode } from "react";
-
-import type { Size } from "~/styles/tokens";
+import type { ComponentProps } from "react";
 
 import { Button, type ButtonProps } from "../button";
+import type { BaseDialogProps } from "../dialog";
 import { Surface } from "../surface";
 import { Text } from "../text";
 import { View } from "../view";
 
 import transitionStyles from "../../styles/transitions.module.css";
+import dialogStyles from "../dialog/dialog.module.css";
 import styles from "./alert-dialog.module.css";
 
 /**
@@ -23,60 +23,31 @@ import styles from "./alert-dialog.module.css";
  * style of generalization feels kind of anti-composition
  */
 
-export interface AlertDialogProps extends ComponentProps<
+export const AlertDialogClose = AlertDialogPrimitive.Close;
+
+export type AlertDialogProps = ComponentProps<
   typeof AlertDialogPrimitive.Root
-> {
-  /**
-   * The title of the alert dialog.
-   */
-  title: string;
-
-  /**
-   * The description of the alert dialog.
-   */
-  description: string;
-
-  /**
-   *
-   * The actions to display in the alert dialog. You must have at least two
-   * actions. By default, actions will be `interactive` and the last action will
-   * have `colorway` "negative_fill".
-   *
-   */
-  actions: Array<ButtonProps>;
-
-  /**
-   * Specify trigger to open alert. You can still used a {@link https://base-ui.com/react/components/alert-dialog#detached-triggers detached trigger}
-   */
-  trigger?: ReactElement;
-
-  /**
-   * Additional content added between the title/description and actions.
-   */
-  children?: ReactNode;
-
-  // TODO reuse below properties for dialog as well
-
-  /**
-   * Maximum width of the dialog Default is "md", use "lg" for bigger dialogs.
-   */
-  width?: Extract<Size, "sm" | "md" | "lg">;
-
-  /**
-   * Vertically center dialog (or not). You probably shouldn't if you suspect
-   * content will overflow.
-   */
-  centered?: boolean;
-}
+> &
+  BaseDialogProps & {
+    /**
+     *
+     * The actions to display in the alert dialog. You must have at least two
+     * actions. By default, actions will be `interactive` and the last action will
+     * have `colorway` "negative_fill".
+     *
+     */
+    actions: Array<ButtonProps>;
+  };
 
 export function AlertDialog({
   title,
   description,
+  children,
   actions,
   trigger,
-  children,
   width = "md",
   centered = false,
+  className,
   ...props
 }: AlertDialogProps) {
   if (actions.length < 2) {
@@ -89,39 +60,47 @@ export function AlertDialog({
       <AlertDialogPrimitive.Portal>
         <AlertDialogPrimitive.Backdrop
           className={clsx(
-            styles["alert-dialog__backdrop"],
-            transitionStyles.transition_opacity,
+            dialogStyles["dialog__backdrop"],
+            transitionStyles["transition_opacity"],
           )}
         />
         <AlertDialogPrimitive.Popup
           className={clsx(
-            styles["alert-dialog__popup"],
-            centered && styles["alert-dialog__popup_centered"],
-            transitionStyles.transition_scale,
+            dialogStyles["dialog__popup"],
+            centered && dialogStyles["dialog__popup_centered"],
+            transitionStyles["transition_scale"],
           )}
         >
           <Surface
+            background="root"
             className={clsx(
-              styles["alert-dialog__content"],
-              styles[`alert-dialog__content_width_${width}`],
+              dialogStyles["dialog__content"],
+              dialogStyles[`dialog__content_width_${width}`],
+              className,
             )}
           >
-            <View className={styles["alert-dialog__header"]}>
-              <Text render={<AlertDialogPrimitive.Title />} size="2xl">
-                {title}
-              </Text>
-              <Text
-                multiline
-                color="dimmer"
-                render={<AlertDialogPrimitive.Description />}
-              >
-                {description}
-              </Text>
-            </View>
+            {title || description ? (
+              <View className={dialogStyles["dialog__header"]}>
+                {title ? (
+                  <Text render={<AlertDialogPrimitive.Title />} size="2xl">
+                    {title}
+                  </Text>
+                ) : null}
+                {description ? (
+                  <Text
+                    multiline
+                    color="dimmer"
+                    render={<AlertDialogPrimitive.Description />}
+                  >
+                    {description}
+                  </Text>
+                ) : null}
+              </View>
+            ) : null}
             {children}
             <View className={styles["alert-dialog__actions"]}>
               {actions.map(({ children, ...action }, i) => (
-                <AlertDialogPrimitive.Close
+                <AlertDialogClose
                   key={i}
                   render={
                     <Button
@@ -130,7 +109,7 @@ export function AlertDialog({
                   }
                 >
                   {children}
-                </AlertDialogPrimitive.Close>
+                </AlertDialogClose>
               ))}
             </View>
           </Surface>

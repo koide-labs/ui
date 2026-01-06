@@ -1,6 +1,8 @@
 .separator {
   flex-grow: 0;
   flex-shrink: 0;
+  outline: none;
+  border: none;
 }
 
 .separator_color_default {

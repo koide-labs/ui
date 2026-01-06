@@ -48,7 +48,7 @@ export function Button({
       interactive={true}
       render={
         <ButtonPrimitive
-          className={clsx(styles.button, styles[`button_height_${size}`])}
+          className={clsx(styles["button"], styles[`button_height_${size}`])}
           focusableWhenDisabled={!!props.loading}
           render={render}
         />

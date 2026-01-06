@@ -17,7 +17,7 @@ export function Anchor({ external, render, children, ...props }: AnchorProps) {
     render,
     props: mergeProps(
       {
-        className: styles.anchor,
+        className: styles["anchor"],
         ...(external
           ? {
               target: "_blank",
@@ -31,7 +31,7 @@ export function Anchor({ external, render, children, ...props }: AnchorProps) {
               <Icon
                 name="external-link-line"
                 size="sm"
-                className={styles.anchor__icon}
+                className={styles["anchor__icon"]}
               />
             ) : null}
           </>

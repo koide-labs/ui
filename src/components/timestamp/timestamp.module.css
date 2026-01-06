@@ -1,0 +1,8 @@
+.timestamp {
+  width: fit-content;
+}
+
+.timestamp_interactive {
+  padding-right: var(--space-2);
+  padding-left: var(--space-2);
+}
