@@ -1,4 +1,6 @@
 .command-dialog {
+  --command-dialog-padding: var(--space-6);
+
   border: none;
   padding: 0;
 
@@ -11,7 +13,7 @@
 
 .command-dialog__empty {
   padding: var(--space-28) var(--space-16);
-  padding-top: calc(var(--space-28) + var(--space-8));
+  padding-top: calc(var(--space-28) + var(--command-dialog-padding));
   text-align: center;
 }
 
@@ -51,13 +53,13 @@
   border-top: 0;
   border-bottom-right-radius: var(--border-radius-default) !important;
   border-bottom-left-radius: var(--border-radius-default) !important;
-  padding-bottom: var(--space-8);
+  padding-bottom: var(--command-dialog-padding);
   max-height: var(--space-256);
   overflow: hidden auto;
 }
 
 .command-dialog__group {
-  padding-top: var(--space-8);
+  padding-top: var(--space-6);
 
   /* stylelint-disable-next-line  */
   [cmdk-group-heading] {
@@ -73,7 +75,8 @@
   flex-direction: row;
   align-items: center;
   gap: var(--space-8);
-  padding: var(--space-6) var(--space-12);
+  padding: var(--space-4) var(--space-12);
+  height: var(--space-32);
   user-select: none;
 
   &[data-selected="true"] {
