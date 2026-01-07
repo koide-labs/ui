@@ -1,5 +1,6 @@
 import { mergeProps, useRender } from "@base-ui/react";
 import clsx from "clsx";
+import type { ElementType } from "react";
 
 import colorwayStyles from "./view_colorway.module.css";
 import interactiveStyles from "./view_interactive.module.css";
@@ -43,7 +44,10 @@ export type ColorVariant = `${Color}_${ColorStyle}`;
 
 export type LoadingVariant = "background" | "foreground";
 
-export interface ViewProps extends useRender.ComponentProps<"div"> {
+export type ViewProps<T extends ElementType = "div"> = Omit<
+  useRender.ComponentProps<T>,
+  "color"
+> & {
   /**
    * Centralized property to define either an interactive variant or colorway.
    * We know which is which because colorways have an underscore (Color_ColorVariant, like primary_fill).
@@ -66,15 +70,15 @@ export interface ViewProps extends useRender.ComponentProps<"div"> {
    * It'll use sensible defaults based on the colorway or interactive prop.
    */
   loading?: boolean | LoadingVariant;
-}
+};
 
-export const View = ({
+export const View = <T extends ElementType = "div">({
   interactive,
   loading,
   color,
   render,
   ...props
-}: ViewProps) => {
+}: ViewProps<T>) => {
   const normalized = normalize({ interactive, loading });
   const element = useRender({
     defaultTagName: "div",

@@ -11,7 +11,8 @@
 
 /* Maximize performance by declaring styles instead of inline styles */
 .icon_size_sm {
-  --icon-size: var(--space-12);
+  /* TODO revisit this - we kind of depend on icons to be at least 16 px, so maybe expose an "xs" size? idk */
+  --icon-size: var(--space-16);
 }
 
 .icon_size_md {

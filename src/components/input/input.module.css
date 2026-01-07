@@ -11,7 +11,7 @@
     color: var(--foreground-dimmest);
   }
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     cursor: text;
     color: var(--foreground-default);
   }

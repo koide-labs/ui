@@ -4,14 +4,14 @@ import { AllVariants } from "~/stories/components/all-variants";
 import { surfaceBackgrounds } from "~/stories/data";
 import { tokens } from "~/styles/tokens";
 
-import { Switch } from ".";
+import { Slider } from ".";
 import { Surface } from "../surface";
 
 const meta = {
-  title: "Input/Switch",
-  component: Switch,
+  title: "Input/Slider",
+  component: Slider,
   parameters: { layout: "centered" },
-} satisfies Meta<typeof Switch>;
+} satisfies Meta<typeof Slider>;
 
 export default meta;
 
@@ -19,18 +19,23 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    color: "primary",
+    defaultValue: 25,
     disabled: false,
   },
-  render: (args) => <Switch {...args} />,
+  render: (args) => <Slider style={{ width: tokens.space256 }} {...args} />,
 };
 
 export const AllInteractiveStyles: Story = {
+  args: {
+    color: "primary",
+    defaultValue: 25,
+    disabled: false,
+  },
   render: (args) => (
     <AllVariants
       variantName="background"
       variants={surfaceBackgrounds}
-      style={{ backgroundColor: "transparent", flexDirection: "row" }}
+      style={{ backgroundColor: "transparent" }}
       element={
         <Surface
           style={{
@@ -40,7 +45,7 @@ export const AllInteractiveStyles: Story = {
             borderColor: tokens.outlineDimmest,
           }}
         >
-          <Switch {...args} />
+          <Slider style={{ width: tokens.space256 }} {...args} />{" "}
         </Surface>
       }
     />

@@ -12,7 +12,7 @@ import { View, type ViewProps } from "../view";
 import styles from "./button.module.css";
 
 export type ButtonProps = ComponentProps<"button"> &
-  ViewProps & {
+  ViewProps<"button"> & {
     /**
      * Size of the button
      */
@@ -44,7 +44,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   return (
-    <View
+    <View<"button">
       interactive={true}
       render={
         <ButtonPrimitive

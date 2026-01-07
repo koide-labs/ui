@@ -11,7 +11,7 @@
   border-color: transparent;
   border-radius: var(--border-radius-default);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     cursor: pointer;
   }
 }
@@ -25,26 +25,21 @@
 
 /* Variants */
 .view_colorway_outline {
-  transition-property: color, background-color, box-shadow;
+  transition-property: color, border-color, background-color, box-shadow;
   border-color: var(--view-colorway-dimmer);
   background-color: transparent;
-
-  /* default disabled behavior */
   color: var(--view-colorway-dimmer);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: var(--view-colorway-stronger);
 
     &:active {
       transition: none;
-      border-color: var(--view-colorway-stronger);
-      background-color: var(--view-colorway-dimmer);
-      color: var(--view-colorway-strongest);
+      border-color: var(--view-colorway-stronger) !important;
     }
 
     &:focus {
       box-shadow: 0 0 0 2px var(--view-colorway-strongest);
-      color: var(--view-colorway-strongest);
 
       &:not(:focus-visible) {
         box-shadow: none;
@@ -57,16 +52,6 @@
         background-color: var(--view-colorway-dimmer);
         color: var(--view-colorway-strongest);
       }
-
-      /*
-        seems weird that we duplicate :active BUT :hover has higher precedence
-        because its at the bottom and we can't move it bc of linting rules
-        so we cheat and re-add active but just the border part
-      */
-      &:active {
-        transition: none;
-        border-color: var(--view-colorway-stronger);
-      }
     }
   }
 }
@@ -74,7 +59,8 @@
 .view_colorway_outline-static {
   box-shadow: none;
   border-color: var(--view-colorway-dimmer);
-  color: var(--view-colorway-strongest);
+  background-color: transparent;
+  color: var(--view-colorway-stronger);
 }
 
 .view_colorway_mute-static {
@@ -88,12 +74,11 @@
   background-color: transparent;
   color: var(--view-colorway-dimmer);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: var(--view-colorway-stronger);
 
     &:focus {
       box-shadow: 0 0 0 2px var(--view-colorway-strongest);
-      color: var(--view-colorway-strongest);
 
       &:not(:focus-visible) {
         box-shadow: none;
@@ -111,15 +96,12 @@
 
 .view_colorway_fill {
   transition-property: background-color, box-shadow;
-  box-shadow: none;
-
-  /* default disabled behavior */
   background-color: var(--view-colorway-dimmest);
   color: var(--view-colorway-default);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     background-color: var(--view-colorway-dimmer);
-    color: var(--foreground-default);
+    color: var(--view-colorway-strongest);
 
     &:focus {
       box-shadow: 0 0 0 2px var(--view-colorway-stronger);
@@ -140,7 +122,7 @@
 .view_colorway_fill-static {
   box-shadow: none;
   background-color: var(--view-colorway-dimmer);
-  color: var(--foreground-default);
+  color: var(--view-colorway-strongest);
 }
 
 .view_colorway_fill-outline {
@@ -150,14 +132,14 @@
   background-color: var(--view-colorway-dimmest);
   color: var(--view-colorway-default);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
+    border-color: var(--view-colorway-dimmer);
     background-color: var(--view-colorway-dimmest);
     color: var(--view-colorway-strongest);
 
     &:active {
       transition: none;
-      border-color: var(--view-colorway-stronger);
-      background-color: var(--view-colorway-dimmer);
+      border-color: var(--view-colorway-stronger) !important;
     }
 
     &:focus {
@@ -171,12 +153,6 @@
     @media (hover: hover) {
       &:hover {
         border-color: var(--view-colorway-default);
-        background-color: var(--view-colorway-dimmer);
-      }
-
-      &:active {
-        transition: none;
-        border-color: var(--view-colorway-stronger);
       }
     }
   }

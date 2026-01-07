@@ -12,7 +12,7 @@
     background: var(--view-colorway-dimmer);
   }
 
-  &[data-checked]:not([disabled], [aria-disabled="true"]) {
+  &[data-checked]:not([disabled], [data-disabled]) {
     background: var(--view-colorway-default);
 
     &:hover {

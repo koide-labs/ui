@@ -13,7 +13,7 @@
   background-color: transparent;
   color: var(--foreground-dimmest);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     cursor: pointer;
 
     &:focus:focus-visible {
@@ -26,12 +26,11 @@
 }
 
 /* Variants */
-
 .view_interactive_fill {
   transition-property: background-color, box-shadow;
   background-color: var(--surface-interactive-background);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: inherit;
 
     &:active {
@@ -50,7 +49,7 @@
 .view_interactive_no-fill {
   transition-property: background-color, box-shadow;
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: inherit;
 
     &:not(textarea):active {
@@ -70,7 +69,7 @@
   transition-property: background-color, box-shadow;
   border-color: var(--surface-interactive-border);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: inherit;
 
     &:not(textarea):active {
@@ -90,7 +89,7 @@
   transition-property: border-color, box-shadow;
   background-color: var(--surface-interactive-background);
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     border-color: var(--surface-interactive-border);
     color: inherit;
 
@@ -111,7 +110,7 @@
   transition-property: box-shadow;
   border-radius: 0;
 
-  &:not([disabled], [aria-disabled="true"]) {
+  &:not([disabled], [data-disabled]) {
     color: inherit;
 
     &:not(textarea):active {

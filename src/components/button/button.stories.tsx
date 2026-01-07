@@ -92,6 +92,7 @@ export const AllPrimaryVariants: Story = {
     size: "md",
     leftIcon: "square-line",
     loading: false,
+    disabled: false,
   },
   render: (args) => (
     <AllVariants

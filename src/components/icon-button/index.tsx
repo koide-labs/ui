@@ -9,7 +9,7 @@ import { View, type ViewProps } from "../view";
 
 import styles from "./icon-button.module.css";
 
-export type IconButtonProps = ViewProps & {
+export type IconButtonProps = ViewProps<"button"> & {
   /** Icon to display. */
   name: IconName;
 
@@ -28,7 +28,7 @@ export function IconButton({
   ...props
 }: IconButtonProps) {
   return (
-    <View
+    <View<"button">
       interactive={true}
       render={
         <ButtonPrimitive
