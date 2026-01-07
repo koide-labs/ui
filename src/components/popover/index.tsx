@@ -1,6 +1,6 @@
 import { Popover as PopoverPrimitive } from "@base-ui/react/popover";
 import clsx from "clsx";
-import type { ComponentProps, ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 import { Heading } from "../heading";
 import { Surface, type Background } from "../surface";
@@ -12,12 +12,9 @@ import transitionStyles from "../../styles/transitions.module.css";
 import tooltipStyles from "../tooltip/tooltip.module.css";
 import styles from "./popover.module.css";
 
-type PopoverRootProps = Omit<
-  ComponentProps<typeof PopoverPrimitive.Root>,
-  "children"
->;
+type PopoverRootProps = Omit<PopoverPrimitive.Root.Props, "children">;
 type PopoverPositionerProps = Pick<
-  ComponentProps<typeof PopoverPrimitive.Positioner>,
+  PopoverPrimitive.Positioner.Props,
   "align" | "side"
 >;
 
@@ -68,7 +65,7 @@ export function Popover({
             )}
           >
             <PopoverPrimitive.Arrow className={tooltipStyles["tooltip__arrow"]}>
-              <TooltipArrow className={tooltipStyles["tooltip__arrow-icon"]} />
+              <TooltipArrow />
             </PopoverPrimitive.Arrow>
             {title || description ? (
               <View className={styles["popover__header"]}>

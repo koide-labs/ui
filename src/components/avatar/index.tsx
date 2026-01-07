@@ -5,14 +5,14 @@ import type { Size } from "~/styles/tokens";
 
 import styles from "./avatar.module.css";
 
-export interface AvatarProps {
+export interface AvatarProps extends AvatarPrimitive.Root.Props {
   /**
    * Avatar url; if not provided, uses fallback based on username or fullName.
    */
-  src?: string | null;
+  image?: string | null;
 
   /**
-   * Used for initials if avatar src is not provided.
+   * Used for initials if avatar image is not provided.
    */
   username: string;
 
@@ -27,18 +27,27 @@ export interface AvatarProps {
   size?: Size;
 }
 
-export function Avatar(props: AvatarProps) {
-  const fallback = getAvatarFallback(props.username, props.fullName);
+export function Avatar({
+  image,
+  username,
+  fullName,
+  size = "md",
+  className,
+  ...props
+}: AvatarProps) {
+  const fallback = getAvatarFallback(username, fullName);
   return (
     <AvatarPrimitive.Root
       className={clsx(
         styles["avatar"],
-        styles[`avatar_size_${props.size || "md"}`],
+        styles[`avatar_size_${size}`],
+        className,
       )}
+      {...props}
     >
-      {props.src ? (
+      {image ? (
         <AvatarPrimitive.Image
-          src={props.src}
+          src={image}
           className={styles["avatar__image"]}
         />
       ) : null}

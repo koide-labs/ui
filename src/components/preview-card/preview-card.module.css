@@ -1,0 +1,5 @@
+.preview-card {
+  gap: var(--space-8);
+  padding: var(--space-8);
+  max-width: var(--space-256);
+}

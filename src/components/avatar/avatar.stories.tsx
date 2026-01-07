@@ -23,7 +23,15 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    src: "https://avatars.githubusercontent.com/u/146884027?v=4",
+    image: "https://avatars.githubusercontent.com/u/146884027?v=4",
+    username: "npham-dev",
+    size: "md",
+  },
+  render: (props) => <Avatar {...props} />,
+};
+
+export const Fallback: Story = {
+  args: {
     username: "npham-dev",
     size: "md",
   },
@@ -32,7 +40,7 @@ export const Default: Story = {
 
 export const AllSizes: Story = {
   args: {
-    src: "https://avatars.githubusercontent.com/u/146884027?v=4",
+    image: "https://avatars.githubusercontent.com/u/146884027?v=4",
     username: "npham-dev",
   },
   argTypes: {

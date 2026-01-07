@@ -4,9 +4,9 @@
   flex-shrink: 0;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--background-highest);
+  border-color: var(--outline-dimmest);
   border-radius: var(--border-radius-round);
-  background-color: var(--outline-dimmest);
+  background-color: var(--background-highest);
   width: var(--avatar-size);
   height: var(--avatar-size);
   overflow: hidden;

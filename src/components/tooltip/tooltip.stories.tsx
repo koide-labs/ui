@@ -22,6 +22,7 @@ const meta = {
     open: {
       control: "boolean",
     },
+    ...disable(["className"]),
   },
 } satisfies Meta<typeof Tooltip>;
 
@@ -52,7 +53,7 @@ export const Default: Story = {
 
 export const Provider: Story = {
   argTypes: {
-    ...disable(["message", "trigger", "open"]),
+    ...disable(["message", "trigger", "open", "children"]),
   },
   render: () => (
     <TooltipProvider>

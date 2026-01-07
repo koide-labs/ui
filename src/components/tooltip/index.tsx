@@ -1,6 +1,6 @@
 import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
 import clsx from "clsx";
-import type { ComponentProps, ReactElement, ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
 import { textify } from "~/-utils";
 
@@ -12,21 +12,20 @@ import styles from "./tooltip.module.css";
 
 export const TooltipProvider = TooltipPrimitive.Provider;
 
-type TooltipRootProps = Omit<
-  ComponentProps<typeof TooltipPrimitive.Root>,
-  "children"
->;
+type TooltipRootProps = Omit<TooltipPrimitive.Root.Props, "children">;
 type TooltipPositionerProps = Pick<
-  ComponentProps<typeof TooltipPrimitive.Positioner>,
+  TooltipPrimitive.Positioner.Props,
   "align" | "side"
 >;
-
 export type TooltipProps = TooltipRootProps &
   TooltipPositionerProps & {
     children?: ReactNode;
 
     /** Specify trigger to open tooltip. */
     trigger?: ReactElement;
+
+    /** Apply className to tooltip content */
+    className?: string;
   };
 
 export function Tooltip({
@@ -34,6 +33,7 @@ export function Tooltip({
   trigger,
   align,
   side,
+  className,
   ...props
 }: TooltipProps) {
   return (
@@ -46,10 +46,11 @@ export function Tooltip({
             className={clsx(
               styles["tooltip"],
               transitionStyles["transition_scale"],
+              className,
             )}
           >
             <TooltipPrimitive.Arrow className={styles["tooltip__arrow"]}>
-              <TooltipArrow className={styles["tooltip__arrow-icon"]} />
+              <TooltipArrow />
             </TooltipPrimitive.Arrow>
             {textify(children)}
           </TooltipPrimitive.Popup>
