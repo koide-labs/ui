@@ -36,7 +36,7 @@
   --border-radius-8: 8px;
   --border-radius-12: 12px;
   --border-radius-16: 16px;
-  --border-radius-default: var(--border-radius-4);
+  --border-radius-default: var(--border-radius-8);
   --border-radius-round: 1028px;
 
   --space-1: 1px;
