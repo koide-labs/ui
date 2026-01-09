@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Dialog } from ".";
+import { Dialog, DialogClose } from ".";
 import { Button } from "../button";
 
 const meta = {
@@ -24,6 +24,8 @@ export const Default: Story = {
       closable
       trigger={<Button leftIcon="palette-line" children="Open Dialog" />}
       {...args}
-    />
+    >
+      <DialogClose interactive>hi</DialogClose>
+    </Dialog>
   ),
 };

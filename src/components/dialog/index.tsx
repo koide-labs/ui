@@ -4,6 +4,7 @@ import type { ComponentProps, ReactElement, ReactNode } from "react";
 
 import type { Size } from "~/styles/tokens";
 
+import { Button, type ButtonProps } from "../button";
 import { IconButton } from "../icon-button";
 import { Surface, type Background } from "../surface";
 import { Text } from "../text";
@@ -11,8 +12,6 @@ import { View } from "../view";
 
 import transitionStyles from "../../styles/transitions.module.css";
 import styles from "./dialog.module.css";
-
-export const DialogClose = DialogPrimitive.Close;
 
 export type BaseDialogProps = {
   /**
@@ -142,4 +141,8 @@ export function Dialog({
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   );
+}
+
+export function DialogClose(props: ButtonProps) {
+  return <DialogPrimitive.Close render={<Button {...props} />} />;
 }

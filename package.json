@@ -1,6 +1,5 @@
 {
-  "name": "rui",
-  "private": true,
+  "name": "@koide-labs/ui",
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/index.js",

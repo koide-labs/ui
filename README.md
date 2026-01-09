@@ -1,21 +1,11 @@
-# rui
+# @koide-labs/ui
 
-Reimplemented UI (rui). Updated, fresh, simple.
+Accessible, fresh, and simple. Built with [Base UI](https://base-ui.com/).
 
 ## Installation
 
-This package is not currently published.
+_This package is currently unpublished._
 
 ```bash
-pnpm add @koide-labs/rui
-```
-
-Install additional dependencies (required for some components).
-
-```bash
-# required for syntax highlighting in <Code />.
-pnpm add prismjs
-
-# required for React Markdown integration
-pnpm add react-markdown
+pnpm add @koide-labs/ui
 ```

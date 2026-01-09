@@ -24,8 +24,8 @@ export const Default: Story = {
   render: (args) => (
     <View style={{ gap: tokens.space12 }}>
       <View style={{ gap: tokens.space2 }}>
-        <Heading level={2}>RUI</Heading>
-        <Text>It's RUI, built with CSS Modules and Base UI.</Text>
+        <Heading level={2}>@koide-labs/ui</Heading>
+        <Text>It's @koide-labs/ui, built with CSS Modules and Base UI.</Text>
       </View>
       <Separator {...args} orientation="horizontal" />
       <View style={{ flexDirection: "row", gap: tokens.space12 }}>
