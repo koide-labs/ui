@@ -1,0 +1,20 @@
+.code {
+  border-radius: var(--border-radius-default);
+  padding: var(--space-8);
+}
+
+.code_title {
+  border-top-left-radius: 0;
+}
+
+.code__value {
+  font-size: var(--font-size-default);
+  font-family: var(--font-family-code);
+}
+
+.code__title {
+  border-top-right-radius: var(--border-radius-default);
+  border-top-left-radius: var(--border-radius-default);
+  padding: var(--space-4) var(--space-8);
+  width: fit-content;
+}

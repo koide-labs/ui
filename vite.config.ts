@@ -46,7 +46,15 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime", "react-dom"],
+      external: [
+        "react",
+        "react/jsx-runtime",
+        "react-dom",
+
+        // for integrations
+        "react-markdown",
+        "prismjs",
+      ],
       input: Object.fromEntries(
         glob
           .sync(

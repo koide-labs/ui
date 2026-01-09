@@ -1,4 +1,6 @@
 [data-theme="dark"] {
+  @nested-import "prismjs/themes/prism-tomorrow.css";
+
   --shadow-1: 0px 4px 8px 0px rgba(2, 2, 3, 0.16);
   --shadow-2: 0px 8px 16px 0px rgba(2, 2, 3, 0.32);
   --shadow-3: 0px 16px 32px 0px rgba(2, 2, 3, 0.48);

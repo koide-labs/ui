@@ -1,0 +1,62 @@
+.react-markdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.react-markdown__h1,
+.react-markdown__h2 {
+  margin-top: var(--space-24);
+}
+
+.react-markdown__h3,
+.react-markdown__h4 {
+  margin-top: var(--space-16);
+}
+
+.react-markdown__h5,
+.react-markdown__p,
+.react-markdown__code {
+  margin-top: var(--space-8);
+}
+
+.react-markdown__ul {
+  margin-top: var(--space-8);
+  padding-left: var(--space-24);
+  list-style-type: disc;
+}
+
+.react-markdown__ol {
+  margin-top: var(--space-8);
+  padding-left: var(--space-24);
+  list-style-type: decimal;
+}
+
+.react-markdown__li {
+  vertical-align: middle;
+}
+
+/* stylelint-disable */
+.react-markdown__li > ul,
+.react-markdown__li > ol {
+  margin-top: 0;
+}
+/* stylelint-enable */
+
+.react-markdown__img-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+.react-markdown__img {
+  border: 1px solid var(--surface-border-interactive);
+  border-radius: var(--border-radius-default);
+  background-color: var(--background-surface);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}

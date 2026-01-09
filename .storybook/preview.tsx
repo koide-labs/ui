@@ -17,10 +17,24 @@ const preview: Preview = {
       test: "todo",
     },
   },
-
+  globalTypes: {
+    theme: {
+      name: "Theme",
+      description: "Global theme for components.",
+      defaultValue: "light",
+      toolbar: {
+        icon: "paintbrush",
+        items: [
+          { value: "light", title: "Light" },
+          { value: "dark", title: "Dark" },
+        ],
+        showName: true,
+      },
+    },
+  },
   decorators: [
-    (Story) => {
-      document.body.dataset.theme = "light";
+    (Story, context) => {
+      document.body.dataset.theme = context.globals.theme || "light";
 
       return (
         <div className="root">

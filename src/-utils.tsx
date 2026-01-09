@@ -2,6 +2,18 @@ import type * as React from "react";
 
 import { Text, type TextProps } from "~/components/text";
 
+export function omit<T extends object>(
+  record: T,
+  keys: (keyof T)[],
+): Omit<T, (typeof keys)[number]> {
+  const shallowClone = { ...record };
+  for (const key of keys) {
+    delete shallowClone[key];
+  }
+
+  return shallowClone;
+}
+
 export function pick<T extends Record<string, string>, K extends keyof T>(
   record: T,
   keys: Array<K>,
