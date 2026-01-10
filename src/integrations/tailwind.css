@@ -1,5 +1,3 @@
-@import "~/styles/core.css";
-
 @theme {
   --font-sans: var(--font-family-default);
   --font-mono: var(--font-family-code);
