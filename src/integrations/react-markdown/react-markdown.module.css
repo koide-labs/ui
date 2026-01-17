@@ -53,9 +53,9 @@
 }
 
 .react-markdown__img {
-  border: 1px solid var(--surface-border-interactive);
+  border: 1px solid var(--surface-interactive-border);
   border-radius: var(--border-radius-default);
-  background-color: var(--background-surface);
+  background-color: var(--surface-background);
   width: 100%;
   height: auto;
   overflow: hidden;
