@@ -10,6 +10,9 @@ Accessible, fresh, and simple.
 
 ```bash
 pnpm add @koide-labs/ui remixicon
+
+# only for react-markdown integration
+pnpm add react-markdown
 ```
 
 Because we import CSS modules for each component, you must add this to your Vite config.

@@ -46,6 +46,7 @@ export default defineConfig({
         "react/jsx-runtime",
         "react-dom",
         "remixicon/fonts/remixicon.symbol.svg",
+        "react-markdown",
       ],
       input: Object.fromEntries(
         glob

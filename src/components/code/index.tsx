@@ -6,6 +6,8 @@ import { Surface } from "../surface";
 import { Text } from "../text";
 import { View } from "../view";
 
+// TODO investigate shiki
+
 /**
  * Are you looking for themes?
  * You should define theme in [data-theme].
