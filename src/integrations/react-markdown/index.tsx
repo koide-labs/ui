@@ -5,6 +5,7 @@ import { omit } from "~/-utils";
 import { Anchor } from "~/components/anchor";
 import { Code } from "~/components/code";
 import { Heading } from "~/components/heading";
+import { InlineCode } from "~/components/inline-code";
 import { Separator } from "~/components/separator";
 import { Text } from "~/components/text";
 import { View } from "~/components/view";
@@ -94,6 +95,13 @@ export function Markdown({
           />
         ),
         code: ({ className, ...props }) => {
+          if (
+            typeof props.children === "string" &&
+            !props.children.includes("\n")
+          ) {
+            return <InlineCode {...omit(props, ["node"])} />;
+          }
+
           return (
             <Code
               className={styles["react-markdown__code"]}
