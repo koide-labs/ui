@@ -30,8 +30,8 @@ I highly recommend using TailwindCSS.
 
 ```css
 @import "tailwindcss" important;
-@import "@koide-labs/integrations/tailwind.css";
-@import "@koide-labs/styles/core.css";
+@import "@koide-labs/ui/integrations/tailwind.css";
+@import "@koide-labs/ui/styles/core.css";
 ```
 
 ### Fonts
