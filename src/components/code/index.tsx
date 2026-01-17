@@ -49,7 +49,7 @@ export function Code({
   );
 
   return (
-    <View className={className}>
+    <View className={clsx(styles["code__root"], className)}>
       {title ? (
         <Surface elevated className={styles["code__title"]}>
           <Text size="sm" color="dimmer">

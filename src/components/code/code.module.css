@@ -1,6 +1,12 @@
+.code__root {
+  border-radius: var(--border-radius-default);
+  overflow: hidden;
+}
+
 .code {
   border-radius: var(--border-radius-default);
   padding: var(--space-8);
+  overflow-x: auto;
 }
 
 .code_title {
