@@ -80,7 +80,6 @@ function ToastList() {
             <ToastPrimitive.Close
               render={
                 <IconButton
-                  className={toast.title ? styles["toast__close"] : undefined}
                   interactive={color ? `${color}_no-fill` : "no-fill"}
                   icon="close-line"
                   size="sm"
