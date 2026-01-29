@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .switch {
     position: relative;
     border-width: 1px;

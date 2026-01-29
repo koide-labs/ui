@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .toaster__viewport {
     position: fixed;
     right: var(--space-8);

@@ -1,4 +1,4 @@
-@layer ui-atom {
+@layer atom {
   .tooltip {
     z-index: 49;
     box-shadow: var(--shadow-1);

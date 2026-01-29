@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .status-banner {
     flex-grow: 1;
     flex-shrink: 1;

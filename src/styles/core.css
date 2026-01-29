@@ -1,21 +1,23 @@
-@layer ui-reset, ui-theme, ui-atom, ui-component;
+@layer normalize, theme, base, atom, components;
 
 /*
+  normalize - modern-normalize.css
   theme - tokens and variables
+  base - preflight
   atom - reusable styles/components that other components extend from
   components - actual component styles
 */
 
-@import "modern-normalize/modern-normalize.css" layer(ui-reset);
-@import "./themes/light.css" layer(ui-theme);
-@import "./themes/dark.css" layer(ui-theme);
+@import "modern-normalize/modern-normalize.css" layer(normalize);
+@import "./themes/light.css" layer(theme);
+@import "./themes/dark.css" layer(theme);
 
 /*
   TODO maybe revisit to add custom animations (just fade)
   @media (prefers-reduced-motion: reduce)
 */
 
-@layer ui-reset {
+@layer normalize {
   /*
     1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
     2. Remove default margins and padding
@@ -33,7 +35,7 @@
   }
 }
 
-@layer ui-theme {
+@layer theme {
   :root {
     --black: #0e1525;
     --white: #fcfcfc;
@@ -147,7 +149,7 @@
   }
 }
 
-@layer ui-atom {
+@layer atom {
   body {
     /* https://base-ui.com/react/overview/quick-start */
     position: relative;

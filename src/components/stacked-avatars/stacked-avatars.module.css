@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .stacked-avatars {
     flex-direction: row;
     transform: translateX(0);

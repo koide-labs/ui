@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .radio {
     border-radius: var(--border-radius-round);
     aspect-ratio: 1 / 1;

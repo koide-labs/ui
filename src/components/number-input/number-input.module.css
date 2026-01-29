@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .number-input__root {
     display: flex;
     flex-direction: column;

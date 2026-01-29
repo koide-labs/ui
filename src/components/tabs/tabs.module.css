@@ -2,7 +2,7 @@
 
 /* TODO make this not so bad... ignoring for now because variants are easiest with nesting */
 
-@layer ui-component {
+@layer components {
   .tabs {
     gap: var(--space-8);
   }

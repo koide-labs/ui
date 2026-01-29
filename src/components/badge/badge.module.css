@@ -1,4 +1,4 @@
-@layer ui-component {
+@layer components {
   .badge {
     display: inline-flex;
     align-items: center;
