@@ -1,5 +1,5 @@
 .tooltip {
-  z-index: 50;
+  z-index: 49;
   box-shadow: var(--shadow-1);
   border: 1px solid var(--outline-dimmer);
   border-radius: var(--border-radius-default);

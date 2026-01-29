@@ -1,8 +1,10 @@
 .toast__viewport {
   position: fixed;
-  z-index: 1;
+  right: var(--space-8);
+  bottom: var(--space-8);
+  z-index: 49;
   margin: 0 auto;
-  inset: auto var(--space-8) var(--space-8) auto;
+  isolation: isolate;
   width: var(--space-256);
 
   @media (width >= 512px) {

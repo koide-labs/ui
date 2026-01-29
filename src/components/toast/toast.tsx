@@ -76,7 +76,6 @@ function ToastList() {
               />
             </View>
 
-            {/* close icon will appear over content UNLESS we disable aboslute positioning */}
             <ToastPrimitive.Close
               render={
                 <IconButton
