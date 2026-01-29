@@ -121,9 +121,10 @@
 }
 
 .toast__content {
+  position: relative;
   flex-grow: 1;
   flex-shrink: 1;
-  gap: var(--space-16);
+  gap: var(--space-8);
   transition: opacity var(--transition-duration-snappy)
     var(--transition-timing-function-snappy);
   padding: var(--space-12);
@@ -139,15 +140,11 @@
 }
 
 .toast__header {
-  flex: 1 1 auto;
   gap: var(--space-4);
 }
 
-.toast__row {
-  flex: 1 1 auto;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: var(--space-4);
+.toast__header_pad {
+  padding-right: var(--space-24);
 }
 
 .toast__title {
@@ -156,4 +153,10 @@
 
 .toast__description {
   flex: 1 1 auto;
+}
+
+.toast__close {
+  position: absolute;
+  top: var(--space-12);
+  right: var(--space-12);
 }

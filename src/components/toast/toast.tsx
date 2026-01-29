@@ -57,36 +57,38 @@ function ToastList() {
           render={<ToastPrimitive.Content />}
           className={styles["toast__content"]}
         >
-          <View className={styles["toast__row"]}>
-            <View className={styles["toast__header"]}>
-              {toast.title ? (
+          <View
+            className={clsx(
+              styles["toast__header"],
+              !toast.title && styles["toast__header_pad"],
+            )}
+          >
+            <ToastPrimitive.Title
+              render={
                 <Heading
                   level={2}
                   size="lg"
                   color="inherit"
                   className={styles["toast__title"]}
-                >
-                  {toast.title}
-                </Heading>
-              ) : null}
-
-              <ToastPrimitive.Description
-                render={<Text multiline color={color ? "inherit" : "dimmer"} />}
-                className={styles["toast__description"]}
-              />
-            </View>
-
-            <ToastPrimitive.Close
-              render={
-                <IconButton
-                  interactive={color ? `${color}_no-fill` : "no-fill"}
-                  icon="close-line"
-                  size="sm"
-                  alt="Close"
                 />
               }
             />
+            <ToastPrimitive.Description
+              render={<Text multiline color={color ? "inherit" : "dimmer"} />}
+              className={styles["toast__description"]}
+            />
           </View>
+          <ToastPrimitive.Close
+            render={
+              <IconButton
+                interactive={color ? `${color}_no-fill` : "no-fill"}
+                icon="close-line"
+                size="sm"
+                alt="Close"
+                className={styles["toast__close"]}
+              />
+            }
+          />
           {toast.action ? (
             <Button
               {...toast.action}

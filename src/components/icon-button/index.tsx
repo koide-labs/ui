@@ -25,6 +25,7 @@ export function IconButton({
   alt,
   size = "md",
   render,
+  className,
   ...props
 }: IconButtonProps) {
   return (
@@ -35,6 +36,7 @@ export function IconButton({
           className={clsx(
             styles["icon-button"],
             styles[`icon-button_size_${size}`],
+            className,
           )}
           focusableWhenDisabled={!!props.loading}
           render={render}
