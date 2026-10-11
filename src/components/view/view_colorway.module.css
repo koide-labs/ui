@@ -78,6 +78,11 @@
     &:not([disabled], [data-disabled]) {
       color: var(--view-colorway-stronger);
 
+      &:active {
+        transition: none;
+        border-color: var(--view-colorway-stronger) !important;
+      }
+
       &:focus {
         box-shadow: 0 0 0 2px var(--view-colorway-strongest);
 
@@ -103,6 +108,11 @@
     &:not([disabled], [data-disabled]) {
       background-color: var(--view-colorway-dimmer);
       color: var(--view-colorway-strongest);
+
+      &:active {
+        transition: none;
+        border-color: var(--view-colorway-stronger) !important;
+      }
 
       &:focus {
         box-shadow: 0 0 0 2px var(--view-colorway-stronger);
